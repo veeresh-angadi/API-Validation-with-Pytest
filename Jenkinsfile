@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         IMAGE_NAME = "my-python-api-test"
-        REGISTRY = "vbappur422/my-python-api-test"  // Updated with your Docker Hub username
+        REGISTRY = "vbappur422/my-python-api-test" 
     }
     stages {
         stage('Build Docker Image') {
@@ -17,7 +17,7 @@ pipeline {
         stage('Deploy Docker Image') {
             steps {
                 script {
-                    // Deploy the container (example)
+                    // Deploy the container 
                     sh 'docker run -d --name test-container -p 5000:5000 $REGISTRY:$BUILD_NUMBER'
                 }
             }
